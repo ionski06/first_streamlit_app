@@ -15,4 +15,4 @@ fruits_selected = sl.multiselect("Pick some fruits", list(my_fruit_list['Fruit']
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 sl.dataframe(fruits_to_show)
 
-sl.dataframe(my_fruit_list)
+# sl.dataframe(my_fruit_list)
