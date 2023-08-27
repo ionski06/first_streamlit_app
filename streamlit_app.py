@@ -27,7 +27,6 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # making the normalized json into a dataframe
 sl.dataframe(fruityvice_normalized)
 
-pip install snowflake-connector-python
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
