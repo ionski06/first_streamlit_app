@@ -29,7 +29,7 @@ sl.dataframe(fruityvice_normalized)
 
 import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"]
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"],
 user = "ionski16"
 password = "226962mB"
 account = "OSUMQZB.GB61005"
