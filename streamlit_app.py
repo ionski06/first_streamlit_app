@@ -28,17 +28,3 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # making the normalized json into a df
 streamlit.dataframe(fruityvice_normalized)
-
-import snowflake.connector
-
-conn = streamlit.experimental_connection('snowflake')
-
-# Perform query.
-df = conn.query('SELECT * from FRUIT_LOAD_LIST;', ttl=600)
-
-# Print results.
-for row in df.itertuples():
-    streamlit.write(row)
-
-
-
