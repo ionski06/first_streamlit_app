@@ -32,14 +32,14 @@ streamlit.dataframe(fruityvice_normalized)
 import snowflake.connector
 
 con = snowflake.connector.connect(
-[snowflake]
+**streamlit.secrets[
 user = "ionski16"
 password = "226962mB"
 account = "OSUMQZB.GB61005"
 warehouse = "pc_rivery_wh" 
 database = "pc_rivery_db" 
 schema = "public"
-role= "accountadmin"
+role= "accountadmin"]
 
 )
 my_cur = con.cursor()
