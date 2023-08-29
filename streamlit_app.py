@@ -31,13 +31,8 @@ streamlit.dataframe(fruityvice_normalized)
 
 import snowflake.connector
 
- 
-
-print("Connecting...")
-
 con = snowflake.connector.connect(
 [snowflake]
-user = "ionski16",
 user = "ionski16"
 password = "226962mB"
 account = "OSUMQZB.GB61005"
@@ -47,20 +42,9 @@ schema = "public"
 role= "accountadmin"
 
 )
-
- 
-
-print(con)
-
- 
-
-con.cursor().execute("USE WAREHOUSE " + WAREHOUSE)
-
-con.cursor().execute("USE DATABASE " + DATABASE)
-
- 
-
-try:
-
-  result = con.cursor().execute("Select * from FRUIT_LOAD_LIST")
+my_cur = con.cursor()
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_data_row = my_cur.fetchone()
+streamlit.text("Hello from Snowflake:")
+streamlit.text(my_data_row)
 
