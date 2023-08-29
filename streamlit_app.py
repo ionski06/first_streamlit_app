@@ -26,5 +26,5 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 
 # normalizong the json data
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-# making the normalized json into a df
+# making the normalized json into a dataframe
 streamlit.dataframe(fruityvice_normalized)
