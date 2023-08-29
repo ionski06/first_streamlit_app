@@ -29,4 +29,38 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # making the normalized json into a df
 streamlit.dataframe(fruityvice_normalized)
 
+import snowflake.connector
+
+ 
+
+print("Connecting...")
+
+con = snowflake.connector.connect(
+[snowflake]
+user = "ionski16",
+user = "ionski16"
+password = "226962mB"
+account = "OSUMQZB.GB61005"
+warehouse = "pc_rivery_wh" 
+database = "pc_rivery_db" 
+schema = "public"
+role= "accountadmin"
+
+)
+
+ 
+
+print(con)
+
+ 
+
+con.cursor().execute("USE WAREHOUSE " + WAREHOUSE)
+
+con.cursor().execute("USE DATABASE " + DATABASE)
+
+ 
+
+try:
+
+  result = con.cursor().execute("Select * from FRUIT_LOAD_LIST")
 
