@@ -57,7 +57,7 @@ def insert_row_snowflake(new_fruit):
     my_cur.execute("insert into FRUIT_LOAD_LIST VALUES ('" + new_fruit +"')")
     return "Thanks for adding " + new_fruit
 
-if add_new_fruit('Add fruit'):
+if streamlit.button('Add fruit'):
   insert_row_snowflake(add_new_fruit)
 
 
